@@ -3,28 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <title>RYA</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <!-- Navigation Bar -->
   <header>
-    <nav class="navbar">
-      <div class="logo">MyPortfolio</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="logo">MyPortfolio</div>
+    <ul class="nav-links">
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#accomplishments">Accomplishments</a></li>
+      <li><a href="#cover-letter">Cover Letter</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      <!-- Dropdown -->
+      <li class="dropdown">
+        <a href="#work-examples" class="dropbtn">Work Example ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="#writing-examples">Writing Examples</a></li>
+          <li><a href="#web-project">Web Project</a></li>
+          <li><a href="#database">Database</a></li>
+          <li><a href="#programming">Programming</a></li>
+          <li><a href="#soft-skills">Soft Skills</a></li>
+          <li><a href="#capstone">Capstone</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Main Content -->
   <main>
-    <section id="about">
-      <h1>Hi, I'm [Your Name]</h1>
-      <p>Welcome to my portfolio! I'm a web developer passionate about building creative and user-friendly websites.</p>
-    </section>
+  <!-- Home Section with Photo on Top Left -->
+  <section id="home" class="home-section">
+    <div class="home-content">
+      <div class="home-photo">
+        <img src="assets/css/img/my-photo.jpg"Photo of Rosy" />
+      </div>
+      <div class="home-text">
+        <h1>Hi, I'm [Your Name]</h1>
+        <p>Welcome to my portfolio! I’m a web developer who enjoys turning ideas into interactive, user-friendly designs. Here, you can explore my skills, projects, and professional growth.</p>
+      </div>
+    </div>
+  </section>
 
     <section id="projects">
       <h2>Projects</h2>
@@ -49,7 +73,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 My Portfolio | Built with ❤️ by [Your Name]</p>
+    <p>&copy; 2025 My Portfolio | Built with ❤️ by Rosy Ausencio</p>
   </footer>
 
   <script src="script.js"></script>
