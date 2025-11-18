@@ -3,7 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.page-content {
+  width: 90%;
+  max-width: 900px;
+  margin: 60px auto;
+  padding-bottom: 40px;
+}
 /* Reset & Base */
 * {
   margin: 0;
@@ -68,16 +73,21 @@ header {
 }
 
 /* Dropdown */
-.dropdown .dropdown-content {
+.dropdown-content {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 100%;    /* ensures dropdown sits directly under the button */
   left: 0;
+  list-style: none;   
   background-color: #ae0000;
   border-radius: 8px;
   min-width: 200px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 999;
+  padding: 10px 0;
+  z-index: 9999;
+} 
+
+.dropdown-menu li {
+    list-style: none;   /* ← also ensures bullets are gone */
 }
 
 .dropdown-content li {
