@@ -1,7 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .page-content {
   width: 90%;
@@ -71,7 +71,30 @@ header {
   background-color: #eacec8;
   color: #222;
 }
+body {
+    margin: 0;
+    padding: 0;
+ background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/homephoto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    padding-top: 50px;
+    font-style: italic;
+    position: relative;
+}
+}
+/*Main content */
 
+/* Text over the background */
+.hero-text {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -130,93 +153,8 @@ main {
   width: 90%;
   margin: 40px auto;
 }
-/* Home Section with Photo Top Left */
-.home-section {
-  background-color: #D7BEA8;
-  padding: 60px 20px;
-}
-
-.home-content {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-  gap: 40px;
-}
-.home-hero {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 40px;
-}
-
-.home-photo {
-    width: 450px;      /* big and bold */
-    height: 450px;
-    object-fit: cover;
-    border-radius: 0;  /* no rounded edges */
-}
-
-.home-text {
-    flex: 1;
-    color: var(--text-light);  /* or any text color you want */
-}
-
-.home-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-.home-text p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-}
-
-/* Mobile friendly */
-@media (max-width: 768px) {
-    .home-hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .home-photo {
-        width: 90%;
-        height: auto;
-    }
-}
-
-.home-text h1 {
-  font-size: 2.5rem;
-  color: #38726C;
-  margin-bottom: 10px;
-}
-
-.home-text p {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 600px;
-}
 
 
-
-section {
-  margin-bottom: 60px;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
 
 footer {
   background-color: #A5402D;
