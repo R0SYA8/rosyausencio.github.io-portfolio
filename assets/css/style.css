@@ -1,39 +1,44 @@
 /* ------------------------------
-   Global Styles
+   Google Fonts
 ------------------------------ */
-/* BODY font */
-body {
-    font-family: 'Lora', serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap');
+/* ------------------------------
+   Global Reset
+------------------------------ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background: #f5f5f5;
     color: #161515;
     line-height: 1.6;
-
+    font-family: 'Poppins', sans-serif;
 }
-section {
-    padding: 80px 20px;
+html {
+    scroll-behavior: smooth;
 }
-
-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 600;
-    text-align: center;
-}
-
-/*logo font*/
 .logo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.4rem;
+    cursor: pointer;
 }
+.logo {
+    text-decoration: none;
+}
+p {
+    font-family: "Lora", serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #000000; /* optional but makes it look polished */
+}
+/* Make project overlay text visible */
+.overlay h3,
+.overlay p {
+    color: #ffffff;
+    font-family: "Lora", serif; 
+}
+
 /* ------------------------------
    Navigation Bar
 ------------------------------ */
@@ -45,90 +50,93 @@ section h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.45);
     color: white;
     z-index: 1000;
-    transition: background 0.4s ease;
+    backdrop-filter: blur(4px);
 }
 
-.navbar.scrolled {
-    background: #1f1f1f;
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: white;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 30px;
+    list-style: none;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-size: 1.35rem;
 }
-nav a {
-    font-family: 'Playfair Display', serif;  /* or Lora */
-    font-style: italic;
-    font-weight: 400;
-}
-nav a {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 400;
-}
-/* Hero Section */
+
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
 .hero {
     position: relative;
     height: 100vh;
-    background: url('..img/homephoto.jpg') center/cover no-repeat;
+    width: 100%;
+    background: url('./img/homephoto.jpg') center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    padding: 0 20px;
+    overflow: hidden;
 }
 
-/* Soft dark overlay */
+/* Dark overlay */
 .hero::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.35); /* adjust darker/lighter */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
-/* Ensures text sits above the overlay */
-.hero-title,
-.hero-subtitle {
+.hero-content {
     position: relative;
     z-index: 2;
 }
 
-/* Title glow */
 .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+    font-size: 4.2rem;            /* bigger title */
+    font-weight: 700;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    text-shadow: 0 0 20px rgba(0,0,0,1);
 }
 
-/* Subtitle glow */
 .hero-subtitle {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    font-size: 1.7rem;            /* bigger subtitle */
+    margin-top: 15px;
+    font-weight: 400;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    text-shadow: 0 0 12px rgba(0,0,0,1);
+}
+
+@media (max-width: 600px) {
+    .hero-title { font-size: 2.3rem; }
+    .hero-subtitle { font-size: 1rem; }
 }
 
 /* ------------------------------
-   Sections
+   Section Defaults
 ------------------------------ */
 .section {
     padding: 100px 40px;
-    background: #ffffff;
+    background: #fff;
+    text-align: center;
 }
 
 .section.alt {
@@ -136,160 +144,118 @@ nav a {
 }
 
 .section h2 {
-    font-size: 2rem;
-    padding-left: 15px;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    margin-bottom: 40px;
 }
-/* About Section */
+.about-photo {
+    margin-top: -40px; /* move upward */
+}
+/* ------------------------------
+   ABOUT SECTION
+------------------------------ */
 .about-section {
     max-width: 1100px;
     margin: auto;
-}
-
-.about-title {
-    font-size: 2rem;
-    padding-left: 15px;
-    margin-bottom: 30px;
 }
 
 .about-content {
     display: flex;
     gap: 40px;
     align-items: flex-start;
+    text-align: left;
 }
 
 .about-photo {
-    width: 280px;
-    height: 280px;
+    width: 430px;
+    height: 430px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    flex-shrink: 0; /* prevents image from stretching or shrinking weirdly */
 }
 
 .about-text {
     flex: 1;
     font-size: 1rem;
-    line-height: 1.6;
 }
-/* Projects Section */
+
+/* ------------------------------
+   PROJECTS SECTION
+------------------------------ */
+
 .projects-section {
     max-width: 1200px;
     margin: auto;
 }
 
-.projects-title {
-    font-size: 2rem;
-    border-left: 5px solid #3B82F6;
-    padding-left: 15px;
-    margin-bottom: 30px;
-}
-
-/* Grid layout */
 .projects-grid {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
-/* Individual project box */
-.project-box {
-    width: 100%;
-    height: 200px;
-    border-radius: 12px;
-    background-size: cover;
-    background-position: center;
-    background-color: #d6d6d6; /* fallback color */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    display: block;
-}
-
-/* Hover effect */
-.project-box:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-@media (max-width: 768px) {
-    .project-box {
-        height: 180px;
-    }
-}
-/* Project box container */
+/* Project Box */
 .project-box {
     position: relative;
-    width: 100%;
     height: 200px;
+    border-radius: 12px;
     background-size: cover;
     background-position: center;
-    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     overflow: hidden;
-    display: block;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: .3s ease;
 }
 
-/* Hover grow effect */
 .project-box:hover {
     transform: scale(1.03);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* Overlay (hidden until hover) */
+/* Overlay */
 .overlay {
     position: absolute;
-    inset: 0; /* top:0; left:0; right:0; bottom:0 */
-    background: rgba(0,0,0,0.70);
+    inset: 0;
+    background: rgba(0,0,0,0.75);
     color: white;
     opacity: 0;
+    text-align: center;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    transition: opacity 0.3s ease;
+    transition: .3s ease;
 }
 
-/* Show overlay on hover */
 .project-box:hover .overlay {
     opacity: 1;
 }
 
-/* Overlay text styling */
 .overlay h3 {
-    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
     font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .overlay p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-@media (max-width: 768px) {
-    .overlay {
-        opacity: 1;
-        background: rgba(0,0,0,0.55);
-    }
-}
-.project-box,
-.project-box * {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-}
-/* Contact Section */
-#contact {
-    padding: 80px 20px;
-    background-color: #f2f2f2;
-    text-align: center;
+    font-size: .95rem;
 }
 
+/* ------------------------------
+   CONTACT SECTION
+------------------------------ */
+#contact {
+    padding: 80px 20px;
+    background: #f2f2f2;
+}
 #contact h2 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
     font-size: 2.5rem;
     margin-bottom: 40px;
 }
 
-/* Contact container */
 .contact-container {
     display: flex;
     justify-content: center;
@@ -297,54 +263,45 @@ nav a {
     flex-wrap: wrap;
 }
 
-/* Contact boxes */
 .contact-box {
-    background-color: white;
+    background: white;
     padding: 20px 30px;
     min-width: 250px;
     border-radius: 12px;
     border: 2px solid black;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition: .3s ease;
 }
 
-/* Phone box horizontal layout */
+.contact-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
 .contact-row {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
 }
 
-/* Center the Email + LinkedIn titles */
-.center-box {
-    text-align: center;
-}
-
-/* Titles */
 .contact-box h3 {
-    margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
 }
 
-/* Links */
 .contact-box a {
     color: black;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .contact-box a:hover {
     text-decoration: underline;
 }
 
-/* Hover animation */
-.contact-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
 /* ------------------------------
-   Footer
+   FOOTER
 ------------------------------ */
 .footer {
     background: #1f1f1f;
@@ -352,15 +309,10 @@ nav a {
     text-align: center;
     padding: 20px 0;
 }
-
-/* ------------------------------
-   Scroll Effect for Navbar
------------------------------- */
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-        nav.classList.add("scrolled");
-    } else {
-        nav.classList.remove("scrolled");
-    }
-});
+.footer p {
+    text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+.footer p {
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
