@@ -32,13 +32,16 @@ p {
     line-height: 1.7;
     color: #000000; /* optional but makes it look polished */
 }
-/* Make project overlay text visible */
-.overlay h3,
-.overlay p {
-    color: #ffffff;
-    font-family: "Lora", serif; 
-}
 
+/* Project box description (smaller + cleaner) */
+.overlay p {
+    font-size: 0.85rem;     
+    line-height: 1.4;
+    color: #ffffff !important;
+    font-family: "Lora", serif;
+    opacity: 0.95;
+    margin-top: 5px;
+}
 /* ------------------------------
    Navigation Bar
 ------------------------------ */
@@ -100,10 +103,8 @@ p {
     background: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
-
-.hero-content {
-    position: relative;
-    z-index: 2;
+.hero {
+    margin-bottom: 80px; /* adjust higher or lower */
 }
 
 .hero-title {
@@ -128,6 +129,21 @@ p {
 @media (max-width: 600px) {
     .hero-title { font-size: 2.3rem; }
     .hero-subtitle { font-size: 1rem; }
+}
+.hero {
+    margin-bottom: 80px; /* adjust higher or lower */
+}
+/* FIX HERO TEXT VISIBILITY */
+.hero-title,
+.hero-subtitle {
+    color: #ffffff !important;
+    text-shadow: 0 0 20px rgba(0,0,0,1) !important;
+}
+
+/* Ensure subtitle stays white even with global p styling */
+.hero-subtitle {
+    font-family: "Playfair Display", serif !important;
+    font-style: italic !important;
 }
 
 /* ------------------------------
@@ -155,6 +171,9 @@ p {
 /* ------------------------------
    ABOUT SECTION
 ------------------------------ */
+#about {
+    margin-top: 40px; 
+}
 .about-section {
     max-width: 1100px;
     margin: auto;
@@ -179,7 +198,136 @@ p {
     flex: 1;
     font-size: 1rem;
 }
+#about {
+    margin-bottom: 80px;
+}
 
+/* Resume & Cover Letter Section */
+
+.resume-cover-section h2 {
+    text-align: center;
+    width: 100%;
+}
+.resume-cover-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Resume column */
+.resume-column {
+    background: #f9f9f9;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Cover letter column */
+.cover-letter-column {
+    background: #f9f9f9;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+/* Cover Letter Formatting */
+.cover-letter-column p {
+    font-family: "Lora", serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Signature styling */
+.cover-letter-column .cover-signature {
+    margin-top: 25px;
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+}
+
+/* Headings inside blocks */
+.resume-block h3,
+.cover-letter-column h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* Contact info */
+.resume-contact p {
+    margin-bottom: 4px;
+}
+
+/* Lists */
+.resume-block ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.resume-block li {
+    margin-bottom: 8px;
+}
+
+/* Links inside resume */
+.resume-column a {
+    color: #333;
+    text-decoration: none;
+}
+
+.resume-column a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .resume-cover-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Center Resume & Cover Letter Section */
+.resume-cover-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px; 
+}
+
+/* Keep grid centered */
+.resume-cover-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    width: 100%;
+}
+/* CLEAN FIX — Resume & Cover Letter Section */
+.resume-cover-section {
+    max-width: 1200px;
+    margin: 80px auto;      /* centers the entire section */
+    padding: 0 40px;        /* even left/right padding */
+}
+
+.resume-cover-section h2 {
+    text-align: center;     /* center title only */
+}
+
+/* Keep layout left-aligned INSIDE the section */
+.resume-cover-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Resume Card */
+.resume-column,
+.cover-letter-column {
+    background: #f9f9f9;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
 /* ------------------------------
    PROJECTS SECTION
 ------------------------------ */
@@ -188,11 +336,34 @@ p {
     max-width: 1200px;
     margin: auto;
 }
-
+.section {
+    padding: 100px 40px;
+}
 .projects-grid {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+/* Reduce space below Projects title & paragraph */
+#skills h2 {
+    margin-bottom: 20px;  /* was 40px — now tighter */
+}
+
+#skills p {
+    margin-bottom: 30px;  /* reduce space before the grid starts */
+}
+/* PROJECTS SECTION TITLE + SUBTITLE SIZE FIX */
+#skills h2 {
+    font-size: 3rem;              /* bigger title */
+    margin-bottom: 20px;          /* tightens spacing */
+}
+
+#skills p {
+    font-size: 1.3rem;            /* slightly bigger */
+    color: #333;
+    max-width: 800px;             /* keeps text from stretching too wide */
+    margin: 0 auto 40px;          /* centers and spaces it nicely */
+    text-align: center;
 }
 
 /* Project Box */
@@ -231,14 +402,16 @@ p {
     opacity: 1;
 }
 
-.overlay h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+/* MAKE PROJECT BOXES BIGGER AND EVENLY SPACED */
+.projects-grid {
+    display: grid;
+    gap: 30px; /* slightly larger spacing between boxes */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.overlay p {
-    font-size: .95rem;
+.project-box {
+    height: 260px;        /* increased box height */
+    border-radius: 14px;  /* optional: slightly smoother corners */
 }
 
 /* ------------------------------
@@ -315,4 +488,65 @@ p {
 .footer p {
     color: #ffffff !important;
     text-shadow: none !important;
+}
+/* Section Spacing Adjustments */
+.hero {
+    margin-bottom: 80px;
+}
+
+#about {
+    margin-bottom: 80px;
+}
+#skills {
+    margin-top: 80px;
+}
+/* FINAL FIX — RESTORE HERO TEXT VISIBILITY */
+.hero-title,
+.hero-subtitle {
+    position: relative;
+    z-index: 2;
+    color: #ffffff !important;
+    text-shadow: 0 0 25px rgba(0,0,0,1), 
+                 0 0 12px rgba(0,0,0,0.9),
+                 0 0 6px rgba(0,0,0,0.8);
+}
+
+/* Fix hero subtitle specifically (global p was overriding it) */
+.hero-subtitle {
+    font-family: "Playfair Display", serif !important;
+    font-style: italic !important;
+}
+
+/* Ensure hero NEVER inherits black text from the global p rule */
+.hero p {
+    color: #ffffff !important;
+}
+
+/* Make overlay slightly lighter so text pops */
+.hero::before {
+    background: rgba(0, 0, 0, 0.32) !important;
+}
+/* FIX: restore project box overlay text */
+.overlay p {
+    color: #ffffff !important;
+    font-family: "Lora", serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+/* FINAL OVERLAY TEXT SIZE (Clean + Correct) */
+.overlay h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.15rem !important;   /* perfect size */
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #ffffff !important;
+    text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+
+.overlay p {
+    font-size: 0.8rem !important;    /* smaller description */
+    line-height: 1.4;
+    color: #ffffff !important;
+    opacity: 0.95;
 }
